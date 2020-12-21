@@ -1,0 +1,9 @@
+<ul class="active">
+    <li><a routerLink="/home">Página inicial</a></li>
+    <li><a routerLink="/jogos" [queryParams]="{console: 'Playstation'}">Playstation</a></li>
+    <li><a routerLink="/jogos" [queryParams]="{console: 'Xbox'}">Xbox</a></li>
+    <li><a routerLink="/jogos" [queryParams]="{console: 'Nintendo'}">Nintendo</a></li>
+    <li><a routerLink="/jogos" [queryParams]="{console: 'PC'}">PC</a></li>
+    <li style="float:right"><a routerLink="/login">Login</a></li>
+</ul>
+<router-outlet></router-outlet>

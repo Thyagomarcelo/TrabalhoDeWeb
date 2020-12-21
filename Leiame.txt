@@ -1,0 +1,35 @@
+﻿COM 222 - Desenvolvimento de sistemas web  2020-2
+Trabalho Final - Sistema de Review de Jogos
+
+Equipe: Daniel Garcia Teixeira - 
+        Thiago Marcelo Passos - 
+        Wesley Alexandre de Almeida Gomes - 2018005806
+
+Requisitos para executar o sistema: Node js e Mongo DB
+
+Após descompactar o arquivo, primeiro é necessário iniciar o servidor Mongo DB da seguinte forma:
+-Abrir o prompt de comando e navegar ate a pasta de instalação do mongo:
+     cd (diretorio onde instalou o mongo)\MongoDB\Server\(versao)\bin
+- executar o comando: mongod.exe --dbpath (diretorio deste projeto)\mongo-data
+
+-Em outra janela do prompt de comando, navegar ate a pasta Node deste projeto :
+    abrir a pasta Node e na barra de diretorio digitar cmd e pressionar enter ou via cd diretorio\Node
+-executar o comando npm init, apertar enter em todos os parametros e então instalar os seguintes pacotes node:
+
+comando npm install i mongoose express body-parser cors --save
+
+Em seguida, iniciar o servidor express:
+executar o comando: node index.js e aguardar a mensagem de conexão
+
+Iniciar o Angular:
+-Em outra janela do prompt de comando, na pasta raiz do projeto, instalar o angular, caso não o tenha:
+	 npm install -g @angular/cli 
+-após a instalação criar um projeto angular: ng new (nome do projeto, ex: angularapp), aguardar a instalação e
+ usar no prompt de comando:  cd nomeDoProjeto
+-No explorador de arquivos, recortar a pasta src que está na raiz do projeto, apagar a pasta src que está dentro do projeto angular
+e colar a primeira pasta src
+
+-Executar no prompt de comando: ng serve
+
+Agora basta acessar no navegador: http://localhost:4200
+OBS - Faltou a implementação do login

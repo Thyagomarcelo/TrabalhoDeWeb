@@ -1,0 +1,125 @@
+<body>
+
+    <div id="main">
+        <article>
+            <h1>Jogos :</h1>
+
+            <div *ngIf="pesquisa.console == 'Playstation'">
+                <div class="jogos" *ngFor="let j of jogosPlaystation">
+                    <div
+                        *ngIf="pesquisa.consulta == j.nome || pesquisa.consulta == j.desenvolvedor || pesquisa.consulta == j.genero">
+                        <a routerLink="/jogo" [queryParams]="j">
+                            <img src="{{j.imagem}}" alt="" style="float: left" height="200px" width="150px">
+                            <pre>  Nome : {{j.nome}}
+      Descrição: {{j.resumo}}
+      Genero : {{j.genero}}
+      Desenvolvedor: {{j.desenvolvedor}}
+      Avaliação : {{j.nota}}
+                </pre>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="pesquisa.console == 'Xbox'">
+                <div class="jogos" *ngFor="let j of jogosXbox">
+                    <div
+                        *ngIf="pesquisa.consulta == j.nome || pesquisa.consulta == j.desenvolvedor || pesquisa.consulta == j.genero">
+                        <a routerLink="/jogo" [queryParams]="j">
+                            <img src="{{j.imagem}}" alt="" style="float: left" height="200px" width="150px">
+                            <pre>  Nome : {{j.nome}}
+      Descrição: {{j.resumo}}
+      Genero : {{j.genero}}
+      Desenvolvedor: {{j.desenvolvedor}}
+      Avaliação : {{j.nota}}
+                </pre>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="pesquisa.console == 'PC'">
+                <div class="jogos" *ngFor="let j of jogosPC">
+                    <div
+                        *ngIf="pesquisa.consulta == j.nome || pesquisa.consulta == j.desenvolvedor || pesquisa.consulta == j.genero">
+                        <a routerLink="/jogo" [queryParams]="j">
+                            <img src="{{j.imagem}}" alt="" style="float: left" height="200px" width="150px">
+                            <pre>  Nome : {{j.nome}}
+      Descrição: {{j.resumo}}
+      Genero : {{j.genero}}
+      Desenvolvedor: {{j.desenvolvedor}}
+      Avaliação : {{j.nota}}
+                </pre>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="pesquisa.console == 'Nintendo'">
+                <div class="jogos" *ngFor="let j of jogosNintendo">
+                    <div
+                        *ngIf="pesquisa.consulta == j.nome || pesquisa.consulta == j.desenvolvedor || pesquisa.consulta == j.genero">
+                        <a routerLink="/jogo" [queryParams]="j">
+                            <img src="{{j.imagem}}" alt="" style="float: left" height="200px" width="150px">
+                            <pre>  Nome : {{j.nome}}
+      Descrição: {{j.resumo}}
+      Genero : {{j.genero}}
+      Desenvolvedor: {{j.desenvolvedor}}
+      Avaliação : {{j.nota}}
+                </pre>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <a routerLink="/CadastroJogo"><button>Cadastrar jogo</button></a>
+            </div>
+
+        </article>
+        <nav></nav>
+        <aside>
+            <form class="pesquisa">
+                <input type="search" id="texto" list="historico" autocomplete="off" name="search" [(ngModel)]="search">
+                <datalist id="historico" name="historico">
+                    <div *ngIf="pesquisa.console == 'Playstation'">
+                        <div name=opcoes *ngFor="let j of jogosPlaystation">
+                            <option value="{{j.nome}}"></option>
+                            <option value="{{j.desenvolvedor}}"></option>
+                            <option value="{{j.genero}}"></option>
+                        </div>
+                    </div>
+
+                    <div *ngIf="pesquisa.console == 'Xbox'">
+                        <div name=opcoes *ngFor="let j of jogosXbox">
+                            <option value="{{j.nome}}"></option>
+                            <option value="{{j.desenvolvedor}}"></option>
+                            <option value="{{j.genero}}"></option>
+                        </div>
+                    </div>
+
+                    <div *ngIf="pesquisa.console == 'Nintendo'">
+                        <div name=opcoes *ngFor="let j of jogosNintendo">
+                            <option value="{{j.nome}}"></option>
+                            <option value="{{j.desenvolvedor}}"></option>
+                            <option value="{{j.genero}}"></option>
+                        </div>
+                    </div>
+
+                    <div *ngIf="pesquisa.console == 'PC'">
+                        <div name=opcoes *ngFor="let j of jogosPC">
+                            <option value="{{j.nome}}"></option>
+                            <option value="{{j.desenvolvedor}}"></option>
+                            <option value="{{j.genero}}"></option>
+                        </div>
+                    </div>
+
+                </datalist>
+
+                <a routerLink="/Consulta"
+                    [queryParams]="{ console : pesquisa.console, consulta : search }"><button>Pesquisar></button></a>
+            </form>
+        </aside>
+    </div>
+
+</body>

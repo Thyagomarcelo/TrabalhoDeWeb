@@ -1,0 +1,49 @@
+<body>
+
+  <div id="main">
+    <article>
+      <h1>Reviews :</h1>
+
+
+      <div class="review" *ngFor="let r of reviews">
+        <p>Nome do usuário : {{r.usuario}}</p>
+        <p>nota : {{r.nota}}</p>
+        <p>Opinião : {{r.texto}}</p>
+      </div>
+
+      <div class="suaReview">
+        <h3>Escreva sua review :</h3>
+        <form method="post" #frm="ngForm" (ngSubmit)="CadastroReview(frm)">
+          <div class="form-group row">
+            <label for="inputOpiniao" class="col-sm-1 col-form-label">Opinião :</label>
+            <div class="col-sm-10">
+              <input type="string" class="form-control" id="inputOpiniao" name="Opiniao" autocomplete= "off" placeholder="Opiniao"
+                [(ngModel)]="texto">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputNota" class="col-sm-1 col-form-label">Nota :</label>
+            <div class="col-sm-10">
+              <input type="number" max="10" class="form-control" id="inputNota" name="nota" placeholder="Nota"
+                [(ngModel)]="nota">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-primary">Cadastrar review</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </article>
+    <nav>
+      <img src="{{info.imagem}}" height="200px" width="150px" alt="erro">
+      <h2>{{info.nome}}</h2>
+      <h2>Nota : {{info.nota}}</h2>
+    </nav>
+    <aside>
+    </aside>
+  </div>
+
+</body>

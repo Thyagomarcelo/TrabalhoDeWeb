@@ -1,0 +1,34 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="text-center">
+    <h1>Cadastro</h1>
+    <form method="post" #frm="ngForm" (ngSubmit)="Cadastro(frm)">
+        <div class="form-group row">
+          <label for="inputEmail" class="col-sm-1 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail" name="email" autocomplete="off" placeholder="Email" [(ngModel)]="cadastro.email">
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputNome" class="col-sm-1 col-form-label">Nome</label>
+            <div class="col-sm-10">
+              <input type="string" class="form-control" id="inputNome" name="nome" autocomplete="off" placeholder="Nome" [(ngModel)]="cadastro.nome">
+            </div>
+          </div>
+        <div class="form-group row">
+          <label for="inputPassword" class="col-sm-1 col-form-label">Senha</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword" name="senha" autocomplete="off" placeholder="Senha" [(ngModel)]="cadastro.senha">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+</body>
