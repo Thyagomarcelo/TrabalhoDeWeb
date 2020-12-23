@@ -16,7 +16,7 @@ Após descompactar o arquivo, primeiro é necessário iniciar o servidor Mongo D
     abrir a pasta Node e na barra de diretorio digitar cmd e pressionar enter ou via cd diretorio\Node
 -executar o comando npm init, apertar enter em todos os parametros e então instalar os seguintes pacotes node:
 
-comando npm install i mongoose express body-parser cors --save
+comando npm install i mongoose express body-parser cors method-override --save
 
 Em seguida, iniciar o servidor express:
 executar o comando: node index.js e aguardar a mensagem de conexão
